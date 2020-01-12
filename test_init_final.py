@@ -322,8 +322,8 @@ def init():
 	
 	for j in range(len(regenTime)):
 		for i in range(len(regenData)):
-			if regenTime[j] == regenData[i][1] :
-				f.append(regenData[i][0])
+			if regenTime[j] == regenData[i][2] :
+				f.append(regenData[i][1])
 		regenbossName.append(f)
 		outputTimeHour.append(int(regenTime[j][:2]))
 		outputTimeMin.append(int(regenTime[j][2:]))
