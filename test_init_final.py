@@ -1147,7 +1147,7 @@ while True:
 						tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 						tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
 						embed = discord.Embed(
-								description= '```다음 ' + bossData[i][0] + ' ' + bossData[i][1]  '(' + bossData[i][2] + '.' + bossData[i][6] + ')' + bossTimeString[i] + '입니다.```',
+								description= '```다음 ' + bossData[i][0] + ' ' + bossData[i][1] + '(' + bossData[i][2] + '.' + bossData[i][6] + ')' + bossTimeString[i] + '입니다.```',
 								color=0xff0000
 								)
 						await client.get_channel(channel).send(embed=embed, tts=False)
