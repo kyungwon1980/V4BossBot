@@ -259,7 +259,7 @@ def init():
 		tmp_len = tmp_bossData[j][2].find(':')
 		f.append(tmp_bossData[j][0][11:])		  #bossData[0] : 보스지역
 		f.append(tmp_bossData[j][1][11:])		  #bossData[1] : 보스명
-		f.append(tmp_bossData[j][2][10:tmp_len])  #bossData[2] : 시
+		f.append(tmp_bossData[j][2][10:tmp_len])	  #bossData[2] : 시
 		f.append(tmp_bossData[j][3][13:])		  #bossData[3] : 멍/미입력
 		f.append(tmp_bossData[j][4][20:])		  #bossData[4] : 분전 알림멘트
 		f.append(tmp_bossData[j][5][13:])		  #bossData[5] : 젠 알림멘트
@@ -535,7 +535,7 @@ async def task():
 					if (bossTime[i]+datetime.timedelta(days=-365)) <= aftr:
 						if basicSetting[2] != '0':
 							################ 미입력 보스 ################
-							if bossData[i][2] == '0':
+							if bossData[i][3] == '0':
 								bossFlag[i] = False
 								bossFlag0[i] = False
 								bossMungFlag[i] = False
@@ -1335,7 +1335,7 @@ while True:
 				temp_bossTime2 = []
 				for i in range(bossNum):
 					if bossTimeString[i] == '99:99:99' :
-						temp_bossTime2.append(bossData[i][0])
+						temp_bossTime2.append(bossData[i][1])
 
 				if len(temp_bossTime2) != 0:
 					temp_bossTimeSTR1 = ','.join(map(str, temp_bossTime2))
@@ -1369,7 +1369,7 @@ while True:
 							bossDateString[i] = tmp_bossTime[i].strftime('%Y-%m-%d')
 				await dbSave()
 				#await FixedBossDateSave()
-				#await client.get_channel(channel).send('<보탐봇 재시작 중... 갑자기 인사해도 놀라지마세요!>', tts=False)
+				await client.get_channel(channel).send('<보탐봇 재시작 중... 갑자기 인사해도 놀라지마세요!>', tts=False)
 				print("보탐봇강제재시작!")
 				await asyncio.sleep(2)
 
@@ -1700,12 +1700,12 @@ while True:
 								if output_bossData[i][8] == 0 :
 									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') ' + output_bossData[i][9] + '\n'
 								else :
-									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (미 ' + str(output_bossData[i][5]) + '회) ' + output_bossData[i][9] + '\n'
+									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (미 ' + str(output_bossData[i][8]) + '회) ' + output_bossData[i][9] + '\n'
 							else : 
 								if output_bossData[i][8] == 0 :
 									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') ' + output_bossData[i][9] + '\n'
 								else :
-									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (멍 ' + str(output_bossData[i][5]) + '회) ' + output_bossData[i][9] + '\n'
+									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (멍 ' + str(output_bossData[i][8]) + '회) ' + output_bossData[i][9] + '\n'
 			
 				if len(information) != 0:
 					information = "```diff\n" + information + "\n```"
@@ -1791,7 +1791,7 @@ while True:
 				temp_bossTime1 = []
 				for i in range(bossNum):
 					if bossTimeString[i] == '99:99:99' :
-						temp_bossTime1.append(bossData[i][0])
+						temp_bossTime1.append(bossData[i][1])
 
 				if len(temp_bossTime1) != 0:
 					temp_bossTimeSTR1 = ','.join(map(str, temp_bossTime1))
@@ -1807,12 +1807,12 @@ while True:
 								if output_bossData[i][8] == 0 :
 									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') ' + output_bossData[i][9] + '\n'
 								else :
-									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (미 ' + str(output_bossData[i][5]) + '회) ' + output_bossData[i][9] + '\n'
+									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (미 ' + str(output_bossData[i][8]) + '회) ' + output_bossData[i][9] + '\n'
 							else : 
 								if output_bossData[i][8] == 0 :
 									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') ' + output_bossData[i][9] + '\n'
 								else :
-									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (멍 ' + str(output_bossData[i][5]) + '회) ' + output_bossData[i][9] + '\n'
+									information += output_bossData[i][6] + ' ' + output_bossData[i][5] + ' : ' + output_bossData[i][0] + ' ' + output_bossData[i][1] + '(' + output_bossData[i][2] + '.' + output_bossData[i][3] + ') (멍 ' + str(output_bossData[i][8]) + '회) ' + output_bossData[i][9] + '\n'
 			
 				if len(information) != 0:
 					information = "```diff\n" + information + "\n```"
