@@ -655,9 +655,9 @@ async def dbLoad():
 		for i in range(len(beforeBossData)-1):
 			for j in range(bossNum):
 				startPos = beforeBossData[i+1].find(']')
-				startPos2 = beforeBossData[i+1][startPos+1].find(']')
+				startPos2 = beforeBossData[i+1][startPos+1:].find(']')
 				endPos = beforeBossData[i+1].find('(')
-				if beforeBossData[i+1][startPos2+3:endPos] == bossName[j] :
+				if beforeBossData[i+1][startPos+startPos2+3:endPos] == bossName[j] :
 				#if beforeBossData[i+1].find(bossData[j][0]) != -1 :
 					tmp_mungcnt = 0
 					tmp_len = beforeBossData[i+1].find(':')
