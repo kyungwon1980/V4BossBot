@@ -1312,7 +1312,7 @@ while True:
 				command_list += command[20] + '\n'     #보스탐
 				command_list += command[21] + '\n'     #!보스탐
 				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
-				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
+				command_list += '[보스명]미 또는 [보스명]미 0000, 00:00\n'     
 				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
 				command_list += '[보스명]삭제\n'     
 				command_list += '[보스명]메모 [할말]\n'
@@ -1323,7 +1323,7 @@ while True:
 						)
 				embed.add_field(
 						name="----- 추가기능 -----",
-						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
+						value= '```[보스명]컷/미/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
 						)
 				await client.get_channel(channel).send( embed=embed, tts=False)
 
@@ -1525,7 +1525,7 @@ while True:
 					setting_val += '정산채널 : ' + client.get_channel(int(basicSetting[11])).name + '\n'
 				setting_val += '보스젠알림시간1 : ' + basicSetting[1] + ' 분 전\n'
 				setting_val += '보스젠알림시간2 : ' + basicSetting[3] + ' 분 전\n'
-				setting_val += '보스멍확인시간 : ' + basicSetting[2] + ' 분 후\n'
+				setting_val += '보스미확인시간 : ' + basicSetting[2] + ' 분 후\n'
 				embed = discord.Embed(
 						title = "----- 설정내용 -----",
 						description= '```' + setting_val + '```',
