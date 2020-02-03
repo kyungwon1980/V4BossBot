@@ -283,7 +283,7 @@ def init():
 		bossFlag0.append(False)
 		bossNoInputFlag.append(False)
 		bossNoInputCnt.append(0)
-		bossNameLen.append(int(len(bossData[i][1])))
+		bossNameLen.append(int(len(bossData[j][1])))
 		if bossData[j][6] == '1' :
 			bossName.append(bossData[j][1][:bossNameLen[j]-1] + ' ' + bossData[j][1][bossNameLen[j]-1:] + '채널')
 		else :
