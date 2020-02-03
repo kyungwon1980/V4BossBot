@@ -61,7 +61,7 @@ fixed_bossFlag = []
 fixed_bossFlag0 = []
 bossNoInputFlag = []
 bossNoInputCnt = []
-~
+
 bossName = []
 bossNameLen = []
 
