@@ -625,7 +625,7 @@ async def dbSave():
 	
 	datelist = list(set(datelist1))
 
-	information1 = '----- 보스탐 정보 -----\n'
+	information1 = '----- 불완전 보스탐 정보 -----\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):
 			if timestring == bossTime[i]:
@@ -1697,12 +1697,12 @@ while True:
 					information = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 보스탐 정보 -----",
+						title = "----- 불완전 보스탐 정보 -----",
 						description= information,
 						color=0x990085
 						)
 				embed.add_field(
-						name="----- 미예약보스 -----",
+						name="----- 미예약 보스 -----",
 						value= temp_bossTimeSTR1,
 						inline = False
 						)
@@ -1792,17 +1792,17 @@ while True:
 					information = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 고 정 보 스 -----",
+						title = "----- 필 드 보 스 -----",
 						description= fixed_information,
 						color=0x990085
 						)
 				embed.add_field(
-						name="----- 보스탐 정보 -----",
+						name="----- 불완전 보스탐 정보 -----",
 						value=information,
 						inline = False
 						)
 				embed.add_field(
-						name="----- 미예약보스 -----",
+						name="----- 미예약 보스 -----",
 						value= temp_bossTimeSTR1,
 						inline = False
 						)
