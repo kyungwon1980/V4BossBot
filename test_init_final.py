@@ -1660,7 +1660,7 @@ while True:
 						aa.append(bossTime[i].strftime('%H:%M:%S'))		    	#output_bossData[5] : 시간(00:00:00)
 						aa.append('+')									    	#output_bossData[6] : +
 						aa.append(bossNoInputCnt[i])							#output_bossData[7] : 멍/미입력횟수
-						aa.append(bossData[i][8])								#output_bossData[8] : 메세지
+						aa.append(bossData[i][7])								#output_bossData[8] : 메세지
 						output_bossData.append(aa)
 						aa = []
 
