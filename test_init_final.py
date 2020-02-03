@@ -283,6 +283,7 @@ def init():
 		bossFlag0.append(False)
 		bossNoInputFlag.append(False)
 		bossNoInputCnt.append(0)
+		bossNameLen.append(int(len(bossData[i][1])))
 		if bossData[j][6] == '1' :
 			bossName.append(bossData[j][1][:bossNameLen[j]-1] + ' ' + bossData[j][1][bossNameLen[j]-1:] + '채널')
 		else :
@@ -1168,7 +1169,7 @@ while True:
 									)
 							await client.get_channel(channel).send(embed=embed, tts=False)
 						else:
-							await client.get_channel(channel).send('```' + bossData[i][0] + ' ' + bossName[i] + ' 탐이 아직 안됐습니다. \n다음 ' + bossData[i][0] + ' ' + bossName[i] + '(' + bossData[i][2] + '.' + bossData[i][5] + ') 탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+							await client.get_channel(channel).send('```' + bossData[i][0] + ' ' + bossName[i] + ' 탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + ' ' + bossName[i] + '(' + bossData[i][2] + '.' + bossData[i][5] + ') 탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
 
 					
 			################ 예상 보스 타임 입력 ################ 
